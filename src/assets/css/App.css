@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: #0f172a;
+}
+
+a {
+    text-decoration: none;
+    color: #0f172a;
+}
+
+header {
+    width: 100%;
+    padding: 40px;
+    border-bottom: 1px solid green;
+    display: flex;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+nav h3 {
+    display: flex;
+    margin: 0;
+
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.comece-ja{
+    border-radius: 25px;
+    padding: 8px 16px;
+    background-color: #119140;
+    color: white;
+}
+
+.comece-ja:hover {
+    filter: brightness(1.3);
+}
+
+

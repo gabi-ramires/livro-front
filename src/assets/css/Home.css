@@ -1,0 +1,4 @@
+.frase-marketing, .texto-chamativo{
+    display: flex;
+    justify-content: center;
+}
