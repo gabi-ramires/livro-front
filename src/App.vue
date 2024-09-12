@@ -10,7 +10,7 @@
 
         <div class="nav">
           <router-link to="/login">Fazer login</router-link>
-          <router-link to="/signup" class="comece-ja">Comece já</router-link>
+          <router-link to="/signup" class="btn-verde">Comece já</router-link>
         </div>
       </nav>
     </header>

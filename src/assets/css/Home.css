@@ -1,4 +1,41 @@
-.frase-marketing, .texto-chamativo{
+#home {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
+
+/* Estilo geral do container */
+.chamativo {
+    padding: 40px;
+    text-align: center;
+    max-width: 800px; /* Limita a largura máxima do container */
+    margin: 0 auto;
+}
+
+/* Estilo do título */
+.texto-chamativo {
+    font-size: 3.5rem;
+    line-height: 1.2; /* Controle de espaçamento entre linhas */
+    margin: 0 0 20px 0; /* Espaço abaixo do título */
+}
+
+/* Estilo do destaque */
+.destaque {
+    color: #119140;
+    font-weight: bold;
+}
+
+/* Estilo do parágrafo */
+.frase-marketing {
+    font-size: 1.10rem;
+    margin: 0; /* Remove margem padrão */
+    line-height: 1.5;
+}
+
+.botoes {
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px
+}
+
