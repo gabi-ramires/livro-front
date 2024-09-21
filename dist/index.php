@@ -57,7 +57,7 @@ $conn->close();
 
 
 // Defina o caminho para onde suas sessões estão salvas
-$sessionPath = '/var/lib/php/sessions'; // Altere conforme necessário
+$sessionPath = session_save_path(); // Altere conforme necessário
 
 // Verifica se o diretório existe
 if (is_dir($sessionPath)) {
