@@ -31,9 +31,6 @@ if ($conn->connect_error) {
 }
 date_default_timezone_set('America/Sao_Paulo'); // No PHP
 
-// Define o fuso horário
-//$conn->query("SET time_zone = 'America/Sao_Paulo'");
-$conn->query("SET time_zone = '-03:00'");
 // Inicia a sessão
 session_start();
 
@@ -41,11 +38,12 @@ session_start();
 $session_id = session_id();
 $ip = $_SERVER['REMOTE_ADDR'];
 $dispositivo = $_SERVER['HTTP_USER_AGENT'];
+$data = date('Y-m-d H:i:s');
 
 // Prepara e executa a inserção
-$sql = "INSERT INTO historico_acessos (session_id, ip, dispositivo) VALUES (?, ?, ?)";
+$sql = "INSERT INTO historico_acessos (session_id, ip, dispositivo, data_criacao) VALUES (?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("sss", $session_id, $ip, $dispositivo);
+$stmt->bind_param("ssss", $session_id, $ip, $dispositivo, $data);
 
 if ($stmt->execute()) {
     echo "Novo registro inserido com sucesso.";
