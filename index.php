@@ -30,6 +30,9 @@ if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
 
+// Define o fuso horário
+$conn->query("SET time_zone = 'America/Sao_Paulo'");
+
 // Inicia a sessão
 session_start();
 
@@ -52,13 +55,6 @@ if ($stmt->execute()) {
 // Fecha a conexão
 $stmt->close();
 $conn->close();
-?>
-
-
-
-
-
-
 
 
 require_once('app.html');
