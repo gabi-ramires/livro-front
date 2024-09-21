@@ -7,7 +7,7 @@
 /* Estilo geral do container */
 .chamativo {
     padding: 40px;
-    text-align: center;
+    text-align: justify;
     max-width: 800px; /* Limita a largura máxima do container */
     margin: 0 auto;
 }
@@ -37,5 +37,53 @@
     display: flex;
     justify-content: center;
     gap: 20px
+}
+.card {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.237); /* Filtro escuro */
+    z-index: 1; /* Abaixo dos textos */
+}
+
+h4, h5 {
+    position: absolute;
+    color: rgb(235, 176, 0);
+    z-index: 2; /* Acima do overlay */
+    width: 100%;
+    text-shadow: 
+        1px 1px 0 rgba(0, 0, 0, 1),  /* Contorno superior esquerdo */
+        -1px -1px 0 rgba(0, 0, 0, 1), /* Contorno inferior direito */
+        1px -1px 0 rgba(0, 0, 0, 1), /* Contorno superior direito */
+        -1px 1px 0 rgba(0, 0, 0, 1),  /* Contorno inferior esquerdo */
+        1px 1px 6px rgba(0, 0, 0, 0.7); /* Sombreado */
+}
+
+h4 {
+    top: 80%; /* Ajuste a posição vertical conforme necessário */
+}
+
+h5 {
+    top: 70%; /* Ajuste a posição vertical conforme necessário */
+}
+
+
+.cards {
+    padding: 40px;
+    text-align: justify;
+    max-width: 800px; /* Limita a largura máxima do container */
 }
 
