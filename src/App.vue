@@ -12,6 +12,10 @@
     <main>
       <router-view></router-view>
     </main>
+
+    <footer class="footer">
+      <p>&copy; 2024 Gabriela Ramires. Todos os direitos reservados.</p>
+    </footer>
   </div>
 </template>
 
