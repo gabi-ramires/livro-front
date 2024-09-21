@@ -55,25 +55,21 @@ if ($stmt->execute()) {
 $stmt->close();
 $conn->close();
 
+$jogadoresOnline = array();
+// Obtém o diretório onde as sessões são armazenadas
+$session_save_path = session_save_path();
 
+// Lista todos os arquivos no diretório de sessões
+$session_files = scandir($session_save_path);
 
-// Define o caminho do diretório de sessões
-$sessionDir = session_save_path(); // Obtém o caminho onde as sessões são armazenadas
-
-// Abre o diretório
-if ($handle = opendir($sessionDir)) {
-    echo "Sessões ativas:\n";
-    while (false !== ($entry = readdir($handle))) {
-        // Filtra apenas os arquivos de sessão (normalmente começam com 'sess_')
-        if (strpos($entry, 'sess_') === 0) {
-            echo "$entry\n";
-        }
+// Exibe os arquivos de sessão (que correspondem a sessões ativas)
+foreach ($session_files as $file) {
+    if ($file != "." && $file != "..") {
+        array_push($jogadoresOnline, $file);
     }
-    closedir($handle);
-} else {
-    echo "Não foi possível abrir o diretório de sessões.";
 }
 
+var_dump($jogadoresOnline);
 
 
 require_once('app.html');
