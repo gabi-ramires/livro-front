@@ -7,7 +7,7 @@
     </div>
 
     <div class='botoes'>
-      <a href="/about" class='btn-escuro'>Começar leitura</a>
+      <router-link to="/about" class='btn-escuro'>Começar leitura</router-link>     
     </div>
 
 
