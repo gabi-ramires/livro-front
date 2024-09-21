@@ -71,12 +71,14 @@ if (is_dir($sessionDir)) {
             // Lê o conteúdo do arquivo de sessão
             $sessionData = file_get_contents($sessionDir . '/' . $sessionFile);
             
-            // Adiciona a sessão ativa a um array
-            // O formato do arquivo de sessão pode variar dependendo da configuração
-            $activeSessions[] = [
-                'session_id' => $sessionFile,
-                'data' => $sessionData
-            ];
+            // Verifica se há dados na sessão
+            if (!empty($sessionData)) {
+                // Adiciona a sessão ativa a um array
+                $activeSessions[] = [
+                    'session_id' => $sessionFile,
+                    'data' => $sessionData
+                ];
+            }
         }
     }
 
@@ -99,7 +101,6 @@ if (is_dir($sessionDir)) {
 } else {
     echo "Diretório de sessões não encontrado.";
 }
-
 
 
 require_once('app.html');
