@@ -9,18 +9,57 @@ session_set_cookie_params([
     'samesite' => 'Lax'                 // Controla o comportamento de cookies cross-site
 ]);
 
-// Iniciar a sessão
-session_start();
 
 // Define um valor único para a sessão
 $_SESSION['usuario'] = session_id();
 
-// Exibir o ID da sessão e a variável de sessão
-echo "O ID da sessão é: " . session_id();
-echo "<br>Valor da sessão: " . $_SESSION['usuario'];
-
 // Configurar o tempo de vida da sessão no servidor (em segundos)
 ini_set('session.gc_maxlifetime', 60 * 60 * 24 * 365);  // 1 ano em segundos
 
+// Conexão com o banco de dados
+$servername = "sql210.infinityfree.com";
+$username = "if0_37272125";
+$password = "AMOzNxOhA7c";
+$dbname = "if0_37272125_livro";
+
+// Cria a conexão
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verifica a conexão
+if ($conn->connect_error) {
+    die("Conexão falhou: " . $conn->connect_error);
+}
+
+// Inicia a sessão
+session_start();
+
+// Captura os dados
+$session_id = session_id();
+$ip = $_SERVER['REMOTE_ADDR'];
+$dispositivo = $_SERVER['HTTP_USER_AGENT'];
+
+// Prepara e executa a inserção
+$sql = "INSERT INTO historico_acessos (session_id, ip, dispositivo) VALUES (?, ?, ?)";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("sss", $session_id, $ip, $dispositivo);
+
+if ($stmt->execute()) {
+    echo "Novo registro inserido com sucesso.";
+} else {
+    echo "Erro: " . $stmt->error;
+}
+
+// Fecha a conexão
+$stmt->close();
+$conn->close();
+?>
+
+
+
+
+
+
+
 
 require_once('app.html');
+
