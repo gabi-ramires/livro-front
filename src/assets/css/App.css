@@ -4,25 +4,25 @@
 
 body {
     margin: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Georgia', serif;
     color: #0f172a;
+    background-color: #4d4d4d;
+    font-size: large;
 }
 
 a {
     text-decoration: none;
-    color: #0f172a;
+    color: #f4f4f4;
 }
 
 header {
     width: 100%;
-    padding: 40px;
-    border-bottom: 1px solid green;
-    display: flex;
+    padding: 10px;
 }
 
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
 }

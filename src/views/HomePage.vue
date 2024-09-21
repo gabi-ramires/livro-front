@@ -20,8 +20,4 @@ export default {
 }
 </script>
 
-<style>
-/* Estilos específicos para a Home Page */
-</style>
-
 <style src="../assets/css/Home.css"></style>

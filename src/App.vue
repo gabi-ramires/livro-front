@@ -3,14 +3,8 @@
     <header>
       <nav>
         <div class="nav">
-          <h3>Rifa</h3>
           <router-link to="/">Inicio</router-link>
-          <router-link to="/about">Funcionalidades</router-link>          
-        </div>
-
-        <div class="nav">
-          <router-link to="/login">Fazer login</router-link>
-          <router-link to="/signup" class="btn-verde">Comece já</router-link>
+          <router-link to="/about">Capítulos</router-link>          
         </div>
       </nav>
     </header>

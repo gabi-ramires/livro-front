@@ -1,0 +1,65 @@
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabeçalho */
+.header {
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    color: #333;
+    font-size: 2.5em;
+}
+
+.header h2 {
+    margin: 0;
+    color: #666;
+    font-size: 1.5em;
+}
+
+/* Conteúdo */
+.content {
+    line-height: 1.6;
+    color: #333;
+}
+
+.content p {
+    margin: 0 0 20px;
+    font-size: 1.1em;
+}
+
+/* Rodapé */
+.footer {
+    text-align: center;
+    border-top: 2px solid #ccc;
+    padding-top: 10px;
+    margin-top: 20px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .header h2 {
+        font-size: 1.2em;
+    }
+
+    .content p {
+        font-size: 1em;
+    }
+}
