@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="botoes">
-      <a href="/about" class='btn-branco'>Acessar</a>      
+      <router-link to="/about" class='btn-branco'>Acessar</router-link>   
     </div>
 
 
