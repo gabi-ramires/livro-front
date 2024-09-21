@@ -63,18 +63,45 @@ $sessionDir = session_save_path();
 if (is_dir($sessionDir)) {
     // Abre o diretório
     $sessions = scandir($sessionDir);
-    
-    echo "<h2>Sessões Ativas:</h2><ul>";
+    $activeSessions = [];
+
     foreach ($sessions as $sessionFile) {
         // Ignora arquivos '.' e '..'
         if ($sessionFile != '.' && $sessionFile != '..') {
-            echo "<li>$sessionFile</li>";
+            // Lê o conteúdo do arquivo de sessão
+            $sessionData = file_get_contents($sessionDir . '/' . $sessionFile);
+            
+            // Verifica se há dados na sessão
+            if (!empty($sessionData)) {
+                // Adiciona a sessão ativa a um array
+                $activeSessions[] = [
+                    'session_id' => $sessionFile,
+                    'data' => $sessionData
+                ];
+            }
         }
     }
-    echo "</ul>";
+
+    // Exibe as sessões ativas
+    echo "<h2>Sessões Ativas:</h2>";
+    echo "<table border='1'>
+            <tr>
+                <th>Session ID</th>
+                <th>Dados da Sessão</th>
+            </tr>";
+
+    foreach ($activeSessions as $session) {
+        echo "<tr>
+                <td>" . htmlspecialchars($session['session_id']) . "</td>
+                <td>" . htmlspecialchars($session['data']) . "</td>
+              </tr>";
+    }
+
+    echo "</table>";
 } else {
     echo "Diretório de sessões não encontrado.";
 }
+
 
 
 
