@@ -31,7 +31,7 @@ if ($conn->connect_error) {
 }
 
 // Define o fuso horário
-$conn->query("SET time_zone = 'America/Sao_Paulo'");
+//$conn->query("SET time_zone = 'America/Sao_Paulo'");
 
 // Inicia a sessão
 session_start();
