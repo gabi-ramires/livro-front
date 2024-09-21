@@ -29,6 +29,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
+date_default_timezone_set('America/Sao_Paulo'); // No PHP
 
 // Define o fuso horário
 //$conn->query("SET time_zone = 'America/Sao_Paulo'");
