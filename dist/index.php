@@ -56,27 +56,53 @@ $stmt->close();
 $conn->close();
 
 
+// Diretório onde as sessões são armazenadas
 $sessionDir = session_save_path();
 
 // Verifica se o diretório existe
 if (is_dir($sessionDir)) {
     // Abre o diretório
     $sessions = scandir($sessionDir);
-    
+    $activeSessions = [];
+
     foreach ($sessions as $sessionFile) {
         // Ignora arquivos '.' e '..'
         if ($sessionFile != '.' && $sessionFile != '..') {
-            // Remove o arquivo de sessão
-            if (unlink($sessionDir . '/' . $sessionFile)) {
-                echo "Sessão $sessionFile removida com sucesso.<br>";
-            } else {
-                echo "Erro ao remover a sessão $sessionFile.<br>";
+            // Lê o conteúdo do arquivo de sessão
+            $sessionData = file_get_contents($sessionDir . '/' . $sessionFile);
+            
+            // Verifica se há dados na sessão
+            if (!empty($sessionData)) {
+                // Adiciona a sessão ativa a um array
+                $activeSessions[] = [
+                    'session_id' => $sessionFile,
+                    'data' => $sessionData
+                ];
             }
         }
     }
+
+    // Exibe as sessões ativas
+    echo "<h2>Sessões Ativas:</h2>";
+    echo "<table border='1'>
+            <tr>
+                <th>Session ID</th>
+                <th>Dados da Sessão</th>
+            </tr>";
+
+    foreach ($activeSessions as $session) {
+        echo "<tr>
+                <td>" . htmlspecialchars($session['session_id']) . "</td>
+                <td>" . htmlspecialchars($session['data']) . "</td>
+              </tr>";
+    }
+
+    echo "</table>";
 } else {
     echo "Diretório de sessões não encontrado.";
 }
+
+
 
 require_once('app.html');
 
