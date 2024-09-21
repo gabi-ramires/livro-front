@@ -33,7 +33,7 @@ date_default_timezone_set('America/Sao_Paulo'); // No PHP
 
 // Define o fuso horário
 //$conn->query("SET time_zone = 'America/Sao_Paulo'");
-
+$conn->query("SET time_zone = '-03:00'");
 // Inicia a sessão
 session_start();
 
