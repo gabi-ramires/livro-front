@@ -46,7 +46,9 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("ssss", $session_id, $ip, $dispositivo, $data);
 
 if ($stmt->execute()) {
-    echo "Novo registro inserido com sucesso.";
+    // Obtém o ID do último registro inserido
+    $last_id = $conn->insert_id;
+    echo "Novo registro inserido com sucesso. ID do registro: " . $last_id;
 } else {
     echo "Erro: " . $stmt->error;
 }
@@ -54,22 +56,6 @@ if ($stmt->execute()) {
 // Fecha a conexão
 $stmt->close();
 $conn->close();
-
-$jogadoresOnline = array();
-// Obtém o diretório onde as sessões são armazenadas
-$session_save_path = session_save_path();
-
-// Lista todos os arquivos no diretório de sessões
-$session_files = scandir($session_save_path);
-
-// Exibe os arquivos de sessão (que correspondem a sessões ativas)
-foreach ($session_files as $file) {
-    if ($file != "." && $file != "..") {
-        array_push($jogadoresOnline, $file);
-    }
-}
-
-var_dump($jogadoresOnline);
 
 
 require_once('app.html');
