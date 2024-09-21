@@ -4,6 +4,7 @@ echo '<pre>';
 session_start();
 
 $session_id = session_id();
+$_SESSION['usuario'] = $session_id;
 $ip = $_SERVER['REMOTE_ADDR'];
 $dispositivo = $_SERVER['HTTP_USER_AGENT'];
 
