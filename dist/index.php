@@ -46,9 +46,8 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("ssss", $session_id, $ip, $dispositivo, $data);
 
 if ($stmt->execute()) {
-    // Obtém o ID do último registro inserido
-    $last_id = $conn->insert_id;
-    echo "Novo registro inserido com sucesso. ID do registro: " . $last_id;
+
+    echo "Novo registro inserido com sucesso.";
 } else {
     echo "Erro: " . $stmt->error;
 }
