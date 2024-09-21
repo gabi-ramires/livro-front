@@ -40,12 +40,12 @@ $session_id = session_id();
 $ip = $_SERVER['REMOTE_ADDR'];
 $dispositivo = $_SERVER['HTTP_USER_AGENT'];
 $data = date('Y-m-d H:i:s');
-die('oi');
+
 // Prepara e executa a inserção
 $sql = "INSERT INTO historico_acessos (session_id, ip, dispositivo, data_criacao) VALUES (?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ssss", $session_id, $ip, $dispositivo, $data);
-
+die('oiii');
 if ($stmt->execute()) {
     echo "Novo registro inserido com sucesso.";
 } else {
