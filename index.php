@@ -45,7 +45,7 @@ $data = date('Y-m-d H:i:s');
 $sql = "INSERT INTO historico_acessos (session_id, ip, dispositivo, data_criacao) VALUES (?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ssss", $session_id, $ip, $dispositivo, $data);
-die('oiii');
+
 if ($stmt->execute()) {
     echo "Novo registro inserido com sucesso.";
 } else {
