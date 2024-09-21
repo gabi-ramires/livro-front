@@ -9,8 +9,6 @@ session_set_cookie_params([
     'samesite' => 'Lax'                 // Controla o comportamento de cookies cross-site
 ]);
 
-// Inicia a sessão
-session_start();
 
 // Define um valor único para a sessão
 $_SESSION['usuario'] = session_id();
@@ -33,6 +31,8 @@ if ($conn->connect_error) {
 }
 date_default_timezone_set('America/Sao_Paulo'); // No PHP
 
+// Inicia a sessão
+session_start();
 
 // Captura os dados
 $session_id = session_id();
@@ -46,7 +46,6 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("ssss", $session_id, $ip, $dispositivo, $data);
 
 if ($stmt->execute()) {
-
     echo "Novo registro inserido com sucesso.";
 } else {
     echo "Erro: " . $stmt->error;
