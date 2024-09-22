@@ -56,8 +56,8 @@ nav h3 {
     border-radius: 25px;
     border: 0.5px solid #e5e7eb;
     padding: 8px 16px;
-
-    color: 0f172a;
+    color: white;
+    margin-top: 10px;
 }
 
 .btn-branco:hover {

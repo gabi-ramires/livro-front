@@ -56,7 +56,7 @@ $pessoas_online = 0;
 
 if ($result) {
     $pessoas_online = $result->num_rows;
-    echo "Número de pessoas online: " . $pessoas_online;
+    echo "Online: " . $pessoas_online;
 }
 
 // Fecha a conexão
@@ -66,8 +66,6 @@ $conn->close();
 require_once('app.html');
 
 ?>
-
-<p id='online'></p>
 
 <script>
 window.addEventListener('beforeunload', function() {

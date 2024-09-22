@@ -8,12 +8,11 @@
         </div>
       </nav>
     </header>
+    <span>Online: {{ pessoas_online }}</span>
     
     <main>
       <router-view></router-view>
     </main>
-
-    <p>{{ dados }}</p>
 
     <footer class="footer">
       <p>&copy; 2024 Gabriela Ramires. Todos os direitos reservados.</p>
