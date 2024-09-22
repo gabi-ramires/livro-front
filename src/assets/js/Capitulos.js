@@ -12,15 +12,17 @@ export default {
       },
       buscaCapitulos() {
         fetch('https://livro.free.nf/capitulos.php')
-        .then(response => {
-          console.log(response)
-          //this.capitulos = response.capitulos;
-        })
-        .then( data => {
-          console.log(data)
-          this.capitulos = data.capitulos;
-        })
-        .catch(error => console.error('Erro ao buscar o número de pessoas online:', error));
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json(); // Converter a resposta em JSON
+            })
+            .then(data => {
+                console.log(data);
+                this.capitulos = data.capitulos; // Acesse o array de capítulos
+            })
+            .catch(error => console.error('Erro ao buscar os capítulos:', error));
       },
       selecionaCapitulo(capitulo) {
         this.capitulo_selecionado = capitulo;
