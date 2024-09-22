@@ -1,6 +1,6 @@
 <template>
     <!-- Exibir botões de capítulos -->
-    <div class="capitulos">
+    <div v-if="capitulo_selecionado == 0" class="capitulos">
         <div v-for="capitulo in capitulos" :key="capitulo.id" class="capitulo">
             <div class='botao-capitulo' @click="selecionaCapitulo(capitulo.capitulo)">Capítulo {{ capitulo.capitulo }}</div>
         </div>

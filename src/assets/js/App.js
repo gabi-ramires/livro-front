@@ -22,6 +22,6 @@ export default {
     }
   },
   mounted() {
-    //this.buscaPessoasOnline()
+    this.buscaPessoasOnline()
   }
 }
