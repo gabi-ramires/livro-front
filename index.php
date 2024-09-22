@@ -64,6 +64,7 @@ window.addEventListener('beforeunload', function() {
     <?php
 // Prepara e executa a atualização
 $sql = "UPDATE historico_acessos SET data_fim = ? WHERE session_id = ? AND data_fim is null" ;
+var_dump($sql);
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ss", date('Y-m-d H:i:s'), $session_id);
     ?>
