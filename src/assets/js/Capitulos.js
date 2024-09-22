@@ -2,7 +2,7 @@ export default {
     name: 'Capitulos',
     data() {
       return {
-        title: 'Minha Aplicação Vueee',
+        capitulo_selecionado: 0,
         capitulos: ''
       };
     },
@@ -22,7 +22,7 @@ export default {
       }
     },
     mounted() {
-      //this.alert()
+      this.buscaCapitulos()
     }
   }
   
