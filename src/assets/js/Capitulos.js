@@ -13,7 +13,7 @@ export default {
       buscaCapitulos() {
         fetch('https://livro.free.nf/capitulos.php')
         .then(response => {
-
+          console.log(response)
           this.capitulos = response.capitulos;
         })
         .then({
