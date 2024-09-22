@@ -55,27 +55,20 @@ if ($stmt->execute()) {
     echo "Erro: " . $stmt->error;
 }
 
-?>
-<script>
-window.addEventListener('beforeunload', function() {
-    navigator.sendBeacon('sair.php'); // Envia uma requisição para o PHP
-
-    console.log('saiuuu')
-
-
-});
-</script>
-
-<?php
-
 
 // Fecha a conexão
 $stmt->close();
 $conn->close();
 
-
 require_once('app.html');
 
 ?>
+
+
+<script>
+window.addEventListener('beforeunload', function() {
+    navigator.sendBeacon('sair.php');
+});
+</script>
 
 
