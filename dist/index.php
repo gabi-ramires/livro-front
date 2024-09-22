@@ -47,8 +47,8 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("ssss", $session_id, $ip, $dispositivo, $data);
 
 // Busca quantas pessoas tem online
-$sql = "SELECT * FROM historico_acessos WHERE data_fim IS NULL";
-$result = $conn->query($sql);
+$sql2 = "SELECT * FROM historico_acessos WHERE data_fim IS NULL";
+$result = $conn->query($sql2);
 $pessoas_online = '';
 
 if ($result) {
