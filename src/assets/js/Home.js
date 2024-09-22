@@ -1,5 +1,5 @@
 export default {
-    name: 'Capitulos',
+    name: 'Home',
     data() {
       return {
         capitulo_selecionado: 0,
@@ -7,9 +7,6 @@ export default {
       };
     },
     methods: {
-      alert() {
-        alert('oi')
-      },
       buscaCapitulos() {
         fetch('https://livro.free.nf/capitulos.php')
             .then(response => {
@@ -23,9 +20,6 @@ export default {
                 this.capitulos = data.capitulos; // Acesse o array de capítulos
             })
             .catch(error => console.error('Erro ao buscar os capítulos:', error));
-      },
-      selecionaCapitulo(capitulo) {
-        this.capitulo_selecionado = capitulo;
       },
       mokaa() {
         let moka = {
@@ -41,7 +35,7 @@ export default {
               {
                   "id": 2,
                   "capitulo": "2",
-                  "titulo": "capitulo 2",
+                  "titulo": "A aproximação acontee",
                   "descricao": "<p> ola </p>",
                   "status": "ativo",
                   "data": "2024-09-21 19:58:24"

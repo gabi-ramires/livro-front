@@ -15,32 +15,25 @@
 
     <div class="cards">
       <h3>Últimos capítulos</h3>
-      <router-link to="/capitulos">
-        <div class="card">
-            <img src="../assets/img/capas/capitulo1.jpg" alt="Capítulo 1">
+
+      <!-- card -->
+      <div class='card' v-for="capitulo in capitulos" :key="capitulo.id">
+        <router-link to="/capitulos">
+          <img :src="require(`@/assets/img/capas/capitulo${capitulo.capitulo}.jpg`)" :alt="capitulo.titulo">
           <div class="overlay">
-            <h5>Capítulo 1</h5>
-            <h4>Um novo ciclo</h4>
+            <h5>Capítulo {{ capitulo.id }}</h5>
+            <h4>{{ capitulo.titulo }}</h4>
           </div>
-      </div>
-      </router-link>
-
-
-      <div class="botoes">
-        <router-link to="/capitulos" class='btn-branco'>Acessar</router-link>
+        </router-link>
       </div>
 
 
 
     </div>
-  
+
   </div>
 </template>
 
-<script>
-export default {
-  name: 'HomePage'
-}
-</script>
 
+<script src="../assets/js/Home.js"></script>
 <style src="../assets/css/Home.css"></style>
