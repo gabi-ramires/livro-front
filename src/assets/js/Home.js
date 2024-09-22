@@ -48,8 +48,8 @@ export default {
       }
     },
     mounted() {
-      //this.buscaCapitulos()
-      this.mokaa()
+      this.buscaCapitulos()
+      //this.mokaa()
     }
   }
   
