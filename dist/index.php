@@ -48,20 +48,16 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("ssss", $session_id, $ip, $dispositivo, $data);
 $stmt->execute();
 
-for ($i=0; $i < 5; $i++) { 
-    // Busca quantas pessoas estão online
-    $sql = "SELECT * FROM historico_acessos WHERE data_fim IS NULL";
-    $result = $conn->query($sql);
-    $pessoas_online = 0;
 
-    if ($result) {
-        $pessoas_online = $result->num_rows;
-        echo "Número de pessoas online: " . $pessoas_online;
-    }
+// Busca quantas pessoas estão online
+$sql = "SELECT * FROM historico_acessos WHERE data_fim IS NULL";
+$result = $conn->query($sql);
+$pessoas_online = 0;
 
-    sleep(2);
+if ($result) {
+    $pessoas_online = $result->num_rows;
+    echo "Número de pessoas online: " . $pessoas_online;
 }
-
 
 // Fecha a conexão
 $stmt->close();
