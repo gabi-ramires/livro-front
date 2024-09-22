@@ -84,5 +84,6 @@ h5 {
     padding: 40px;
     text-align: justify;
     max-width: 800px; /* Limita a largura máxima do container */
+    margin: 0 auto;
 }
 
