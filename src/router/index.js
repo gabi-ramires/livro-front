@@ -13,6 +13,7 @@ const routes = [
     name: 'CapitulosPage',
     component: Capitulos
   }
+  
 ];
 
 const router = createRouter({
