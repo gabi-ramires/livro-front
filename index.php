@@ -41,13 +41,14 @@ $ip = $_SERVER['REMOTE_ADDR'];
 $dispositivo = $_SERVER['HTTP_USER_AGENT'];
 $data = date('Y-m-d H:i:s');
 
-for ($i=0; $i < 5; $i++) { 
-    // Prepara e executa a inserção
-    $sql = "INSERT INTO historico_acessos (session_id, ip, dispositivo, data_inicio) VALUES (?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssss", $session_id, $ip, $dispositivo, $data);
-    $stmt->execute();
 
+// Prepara e executa a inserção
+$sql = "INSERT INTO historico_acessos (session_id, ip, dispositivo, data_inicio) VALUES (?, ?, ?, ?)";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ssss", $session_id, $ip, $dispositivo, $data);
+$stmt->execute();
+
+for ($i=0; $i < 5; $i++) { 
     // Busca quantas pessoas estão online
     $sql = "SELECT * FROM historico_acessos WHERE data_fim IS NULL";
     $result = $conn->query($sql);
@@ -58,7 +59,7 @@ for ($i=0; $i < 5; $i++) {
         echo "Número de pessoas online: " . $pessoas_online;
     }
 
-    sleep(1);
+    sleep(2);
 }
 
 
@@ -70,6 +71,7 @@ require_once('app.html');
 
 ?>
 
+<p id='online'></p>
 
 <script>
 window.addEventListener('beforeunload', function() {
