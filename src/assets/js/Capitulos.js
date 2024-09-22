@@ -14,7 +14,7 @@ export default {
         fetch('https://livro.free.nf/capitulos.php')
         .then(response => {
 
-          this.capitulos = response.capitulo;
+          this.capitulos = response.capitulos;
         })
         .then({
         })
