@@ -1,34 +1,29 @@
 <template>
-    <div class="container">
-        <div class="header">
-            <h2>Capítulo 1</h2>
-            <h1>Um novo ciclo</h1>
+    <!-- Exibir botões de capítulos -->
+    <div class="capitulos">
+        <div v-for="capitulo in capitulos" :key="capitulo.id" class="capitulo">
+            <div class='botao-capitulo' @click="selecionaCapitulo(capitulo.capitulo)">Capítulo {{ capitulo.capitulo }}</div>
         </div>
-
-        <main class="content">
-            <p>Quando o despertador tocou, não tive tempo para enrolar na cama. A ansiedade falou mais alto. Na noite anterior, deixei tudo pronto para hoje; afinal, o primeiro dia na escola nova é sempre uma incógnita. Acontece que não era apenas a escola que estava me deixando nervosa; a nova cidade me deu medo. Nunca pensei que finalmente estaria morando em uma cidade grande.</p>
-
-            <p>Em um piscar de olhos, já tinha tomado um banho daqueles que lavam até a alma. O cabelo estava finalizado, solto e úmido, e o cheiro do creme de pentear podia ser sentido há metros de distância. Coloquei meu moletom canguru vermelho bordô preferido, minha calça jeans azul e um tênis da Vans que preciso trocar o quanto antes. Será que ele aguenta mais uns dias?</p>
-            
-            <p>Quando pisei o pé na rua, percebi que estava um deserto coberto por uma neblina grossa, quase não conseguindo ver ao redor. A escola não era longe; dava para ir andando em uns 20 minutos, tempo suficiente para ouvir umas 4 músicas. Enquanto eu andava, tentava me atentar ao que estava ao meu redor, afinal, dizem que cidade grande é bem mais perigosa do que o interior. Minha antiga cidade sobrevivia com uma pequena igreja (onde todos entre 20 e 30 anos se casavam e viviam o resto da vida na mesma cidade em que nasceram), havia o único hospital da cidade, onde quase todos os nascimentos aconteciam, inclusive o meu. Meus pais contam que meu nascimento foi bem complicado; foi uma gravidez de risco, mas, no final, nasci super bem e com saúde. O que poucos sabem é que passei por uma “simpatia” para nascer. Não é, no mínimo, questionável o fato de ter sido algo forçado? Eu acredito que sim.</p>
-            
-            <p>Estava nos últimos segundos de "While Your Lips Are Still Red" quando finalmente cheguei à escola, faltando 5 minutos para o sinal de entrada soar. A escola era grande e tinha um aspecto de ser bem antiga também. A pintura das paredes estava descascando entre o rodapé e os primeiros centímetros de parede. O teto tinha marcas de mofo em alguns cantos, principalmente perto das janelas, cujos vidros tinham pequenas marcas de arranhão, algumas lascas e trincas. Todas as janelas tinham grades com uma pintura verde musgo, algumas já com sinais de corrosão aparente. A entrada principal dava em um saguão com pé direito duplo, o que fazia com que, às vezes, houvesse ecos quando não havia ninguém lá. Tinha um piano enorme no canto direito, enquanto que no canto esquerdo da entrada havia uma estante de vidro com vários tipos de troféus, medalhas e prêmios que a escola colecionava ao longo de algumas décadas. Minha curiosidade me fez ir direto para essa estante ver os detalhes dos prêmios e sobre o que se tratavam. Fiquei alguns segundos olhando e notei que haviam vários prêmios de esportes como vôlei e futebol, prêmios de olimpíadas de matemática, xadrez, música e um que me chamou a atenção, chamado “Feira de Ciências de 2010”. Na minha antiga escola, não havia eventos assim; no máximo, eram eventos no centro da cidade que envolviam política.</p>
-            
-            <p>Ao meu redor, os alunos da escola pareciam estar acostumados com a rotina. Parecia que todos tinham em mente o que fazer naqueles instantes antes de entrar para a sala de aula. Era como se todos aproveitassem o tempo antes de ficarem “presos” por horas em aulas monótonas e entediantes. Mesmo na minha antiga escola, eu não sabia muito bem o que era para fazer em momentos assim. Era para aproveitar o que exatamente? Sempre notei que as pessoas gostavam de ficar em grupos parecidos, conversando sobre assuntos que eu nunca achei minimamente interessantes. Quando eu passava por perto de alguns desses grupos, dava para ouvir conversas como “Você viu o novo clipe da Beyoncé?” ou “Está sabendo quem terminou o namoro?”. Era extremamente vergonhoso quando alguém começava a me fazer perguntas do tipo “Por que você não chega aqui? Não fica aí se isolando”. Eu acabava indo para não chamar atenção, mas achava tão chato ter que ficar ouvindo a conversa deles e fingir que estava gostando de fazer parte. Por que as pessoas achavam que eu era triste por estar sozinha? Eu me sentia desconfortável quando me obrigavam a me enturmar. Será que todos se sentem assim também e acabam fingindo que gostam de estar em grupos? Algumas pessoas até eram legais, mas ainda assim, eu sentia que estava perdendo tempo. Nesses momentos, eu pensava que gostaria de estar em casa tentando juntar 5 mil kamas para comprar o conjunto do Mulobo, afinal, minha Iop já estava quase chegando ao nível 150.</p>
-            
-            <p>Entrando na sala, procurei um lugar que não chamasse atenção e que me permitisse assistir às aulas de forma tranquila, sem ser incomodada. Meus colegas já se conheciam; alguns pareciam melhores amigos, viviam grudados na aula, no intervalo e iam embora juntos. Outros eram mais quietos e reservados. Notei que havia um menino da minha antiga cidade, mas não conseguia me lembrar do nome nem de nada sobre ele; só sei que ele provavelmente não sabia que eu era da mesma cidade também.</p>
-            
-            <p>Quando chegou o intervalo, fui direto à lanchonete para comer algo e tomar um café preto. A fila naquele dia estava enorme. Será que todos os dias vão ser assim?</p>
-            
-            <p>Ainda restavam 15 minutos de intervalo e eu já não tinha mais o que fazer. Já tinha percorrido a escola inteira, conhecido a biblioteca, as quadras de esporte e todos os banheiros. Fiquei sentada numa base de concreto pintada de branco que as pessoas usavam como banco. Comecei a observar o que as pessoas estavam fazendo e, principalmente, tentando entender como eram. O que as pessoas de cidade grande fazem fora da escola? Será que vão a festas ou algo assim? Por um instante, reparei em uma menina que passou o intervalo todo sozinha lendo um livro, do qual não consegui ver o título. Ela tinha um cabelo ondulado e liso que batia nos ombros, parecia ser um pouco mais alta do que eu, mas não tive certeza, pois não passei perto dela. Usava sapatos de cor bordô, um jeans escuro e um casaco azul-marinho discreto. Por algum motivo, ela me chamou a atenção e, quando levantou o rosto para olhar ao redor, percebi o quão linda ela era. Me peguei pensando por que ela tinha aquela personalidade. Facilmente poderia estar em um daqueles grupos de meninas bonitas e falantes ou até mesmo com amigos, já que não parecia ser o primeiro dia dela ali. Fiquei curiosa para saber mais sobre ela. Qual será o nome? Como será que descubro?</p>
-            
-            <p>O sinal tocou e todos começaram a se dirigir para suas respectivas salas de aula, mas a menina leitora demorou um pouco para sair dali. Em alguns instantes, ela se levantou e começou a andar na minha direção. Eu fiquei fingindo não ter notado a presença dela quando ela passou por mim. Naquele curto espaço de tempo, consegui perceber que ela tinha uns dez centímetros a mais que eu e seus passos eram leves e curtos, como se não quisesse ser notada ao andar. Ela entrou na sala 14 e logo se misturou na multidão que entrava, fazendo com que eu a perdesse de vista.</p>
-        </main>
-
-        <footer class="footer">
-            <p>&copy; 2024 Gabriela Ramires. Todos os direitos reservados.</p>
-        </footer>
     </div>
+
+    <!-- Renderizar o conteúdo do capítulo selecionado -->
+    <div v-for="capitulo in capitulos" :key="capitulo.id" class="capitulo">
+        <div v-if="capitulo_selecionado == capitulo.capitulo" class="container">
+            <div class="header">
+                <h2>Capítulo {{ capitulo.capitulo}}</h2>
+                <h1>{{ capitulo.titulo}}</h1>
+            </div>
+
+            <main class="content">
+                <p v-html="capitulo.descricao"></p>
+            </main>
+
+            <footer class="footer">
+                <p>&copy; 2024 Gabriela Ramires. Todos os direitos reservados.</p>
+            </footer>
+        </div>
+    </div>
+
 </template>
 
 <script src="../assets/js/Capitulos.js"></script>
