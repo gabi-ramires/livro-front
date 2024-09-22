@@ -8,7 +8,7 @@
         </div>
       </nav>
     </header>
-    <span>Online: {{ pessoas_online }}</span>
+    <span id="online">Online: {{ pessoas_online }}</span>
     
     <main>
       <router-view></router-view>
