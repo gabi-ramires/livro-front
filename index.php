@@ -52,8 +52,7 @@ $result = $conn->query($sql);
 $pessoas_online = '';
 
 if ($result) {
-    $row = $result->fetch_assoc();
-    $pessoas_online = count($row);
+    $pessoas_online = $result->num_rows;
     echo "Número de pessoas online: " . $pessoas_online;
 }
 
