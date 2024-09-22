@@ -54,7 +54,7 @@ export default {
       }
     },
     mounted() {
-      this.buscaCapitulos()
+      //this.buscaCapitulos()
       //this.mokaa()
     }
   }
