@@ -12,10 +12,11 @@ export default {
       },
       buscaCapitulos() {
         fetch('https://livro.free.nf/capitulos.php')
-        .then(response => response.json())
-        .then(data => {
-          console.log(data)
-          this.capitulos = data.capitulo;
+        .then(response => {
+
+          this.capitulos = response.capitulo;
+        })
+        .then({
         })
         .catch(error => console.error('Erro ao buscar o número de pessoas online:', error));
       },
