@@ -71,7 +71,7 @@ require_once('app.html');
 
 <script>
 window.addEventListener('beforeunload', function() {
-    navigator.sendBeacon('sair.php?data_fim=<?= $data; ?>');
+    navigator.sendBeacon('sair.php?data_inicio=<?= $data; ?>');
 });
 </script>
 
