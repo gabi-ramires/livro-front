@@ -32,7 +32,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Conexão falhou: " . $conn->connect_error);
 }
-date_default_timezone_set('America/Sao_Paulo'); // No PHP
+date_default_timezone_set('America/Sao_Paulo');
 
 
 // Captura os dados
@@ -45,7 +45,17 @@ $data = date('Y-m-d H:i:s');
 $sql = "INSERT INTO historico_acessos (session_id, ip, dispositivo, data_inicio) VALUES (?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ssss", $session_id, $ip, $dispositivo, $data);
+$stmt->execute();
 
+// Busca quantas pessoas estão online
+$sql = "SELECT * FROM historico_acessos WHERE data_fim IS NULL";
+$result = $conn->query($sql);
+$pessoas_online = 0;
+
+if ($result) {
+    $pessoas_online = $result->num_rows;
+    echo "Número de pessoas online: " . $pessoas_online;
+}
 
 // Fecha a conexão
 $stmt->close();
