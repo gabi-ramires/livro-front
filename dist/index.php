@@ -55,6 +55,25 @@ if ($stmt->execute()) {
     echo "Erro: " . $stmt->error;
 }
 
+?>
+<script>
+window.addEventListener('beforeunload', function() {
+    //navigator.sendBeacon('sair.php'); // Envia uma requisição para o PHP
+
+    console.log('saiuuu')
+    <?php
+// Prepara e executa a atualização
+$sql = "UPDATE historico_acessos SET data_fim = ? WHERE session_id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ss", date('Y-m-d H:i:s'), $session_id);
+    ?>
+
+});
+</script>
+
+<?php
+
+
 // Fecha a conexão
 $stmt->close();
 $conn->close();
@@ -64,15 +83,4 @@ require_once('app.html');
 
 ?>
 
-<script>
-
-window.addEventListener('beforeunload', function() {
-    //navigator.sendBeacon('sair.php'); // Envia uma requisição para o PHP
-
-    console.log('saiuuu')
-
-});
-
-
-</script>
 
