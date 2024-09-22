@@ -42,7 +42,7 @@ $dispositivo = $_SERVER['HTTP_USER_AGENT'];
 $data = date('Y-m-d H:i:s');
 
 // Prepara e executa a inserção
-$sql = "INSERT INTO historico_acessos (session_id, ip, dispositivo, data_criacao) VALUES (?, ?, ?, ?)";
+$sql = "INSERT INTO historico_acessos (session_id, ip, dispositivo, data_inicio) VALUES (?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ssss", $session_id, $ip, $dispositivo, $data);
 
