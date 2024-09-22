@@ -4,7 +4,7 @@
       <nav>
         <div class="nav">
           <router-link to="/">Inicio</router-link>
-          <router-link to="/about">Capítulos</router-link>          
+          <router-link to="/capitulos">Capítulos</router-link>          
         </div>
       </nav>
     </header>

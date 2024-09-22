@@ -9,13 +9,13 @@
     </div>
 
     <div class='botoes'>
-      <router-link to="/about" class='btn-escuro'>Começar leitura</router-link>
+      <router-link to="/capitulos" class='btn-escuro'>Começar leitura</router-link>
     </div>
 
 
     <div class="cards">
       <h3>Últimos capítulos</h3>
-      <router-link to="/about">
+      <router-link to="/capitulos">
         <div class="card">
             <img src="../assets/img/capas/capitulo1.jpg" alt="Capítulo 1">
           <div class="overlay">
@@ -27,7 +27,7 @@
 
 
       <div class="botoes">
-        <router-link to="/about" class='btn-branco'>Acessar</router-link>
+        <router-link to="/capitulos" class='btn-branco'>Acessar</router-link>
       </div>
 
 

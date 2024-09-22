@@ -31,10 +31,5 @@
     </div>
 </template>
 
-<script>
-export default {
-  name: 'AboutPage'
-}
-</script>
-
-<style src="../assets/css/About.css"></style>
+<script src="../assets/js/Capitulos.js"></script>
+<style src="../assets/css/Capitulos.css"></style>
