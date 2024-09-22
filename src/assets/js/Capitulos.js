@@ -14,9 +14,11 @@ export default {
         fetch('https://livro.free.nf/capitulos.php')
         .then(response => {
           console.log(response)
-          this.capitulos = response.capitulos;
+          //this.capitulos = response.capitulos;
         })
-        .then({
+        .then( data => {
+          console.log(data)
+          this.capitulos = data.capitulos;
         })
         .catch(error => console.error('Erro ao buscar o número de pessoas online:', error));
       },
