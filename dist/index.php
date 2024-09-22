@@ -58,16 +58,10 @@ if ($stmt->execute()) {
 ?>
 <script>
 window.addEventListener('beforeunload', function() {
-    //navigator.sendBeacon('sair.php'); // Envia uma requisição para o PHP
+    navigator.sendBeacon('sair.php'); // Envia uma requisição para o PHP
 
     console.log('saiuuu')
-    <?php
-// Prepara e executa a atualização
-$sql = "UPDATE historico_acessos SET data_fim = ? WHERE session_id = ? AND data_fim is null" ;
-var_dump($sql);
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("ss", date('Y-m-d H:i:s'), $session_id);
-    ?>
+
 
 });
 </script>
