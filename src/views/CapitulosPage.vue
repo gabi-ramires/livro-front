@@ -18,6 +18,19 @@
                 <p v-html="capitulo.descricao"></p>
             </main>
 
+            <main class="content">
+              <div class="form">
+                <h2>Comentários</h2>
+                
+                <label>Nome (opcional):</label>
+                <input type="text" v-model="comentario.nome">
+                <label>Comentário:</label>
+                <textarea v-model="comentario.mensagem" required></textarea>
+
+                <button @click="enviarComentario()">Enviar</button>
+              </div>
+            </main>
+
             <footer class="footer">
                 <p>&copy; 2024 Gabriela Ramires. Todos os direitos reservados.</p>
             </footer>
@@ -34,7 +47,11 @@ export default {
     data() {
       return {
         capitulo_selecionado: 0,
-        capitulos: ''
+        capitulos: '',
+        comentario: {
+          nome: '',
+          mensagem: ''
+        }
       };
     },
     methods: {
@@ -84,6 +101,43 @@ export default {
         console.log(this.capitulos)
       }
     },
+    enviarComentario() {
+        // Verificar se o comentário não está vazio
+        if (!this.comentario.mensagem) {
+          alert('O campo de comentário é obrigatório.');
+          return;
+        }
+
+        // Montar os dados a serem enviados
+        const dadosComentario = {
+          nome: this.comentario.nome || 'Anônimo',  // Nome opcional
+          mensagem: this.comentario.mensagem,
+          capitulo: this.capitulo_selecionado // Associar o comentário ao capítulo selecionado
+        };
+
+        // Enviar os dados via POST
+        fetch('https://livro.free.nf/comentarios.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(dadosComentario)
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert('Comentário enviado com sucesso!');
+            this.comentario.nome = '';  // Limpar os campos
+            this.comentario.mensagem = '';
+          } else {
+            alert('Erro ao enviar o comentário. Tente novamente.');
+          }
+        })
+        .catch(error => {
+          console.error('Erro ao enviar o comentário:', error);
+          alert('Ocorreu um erro. Por favor, tente novamente mais tarde.');
+        });
+      },
     mounted() {
       this.buscaCapitulos()
       //this.mokaa()
