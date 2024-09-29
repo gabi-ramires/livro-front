@@ -17,7 +17,7 @@ export default {
             })
             .then(data => {
                 console.log(data);
-                this.capitulos = data.capitulos.reverse();
+                this.capitulos = data.capitulos.slice().reverse();
             })
             .catch(error => console.error('Erro ao buscar os capítulos:', error));
       },
