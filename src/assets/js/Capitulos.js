@@ -22,7 +22,7 @@ export default {
                 console.log(data);
                 this.capitulos = data.capitulos; // Acesse o array de capítulos
             })
-            .catch(error => console.error('Erro ao buscar os capítulos:', error));
+            .catch(error => alert('Erro ao buscar os capítulos:', error));
       },
       selecionaCapitulo(capitulo) {
         this.capitulo_selecionado = capitulo;
