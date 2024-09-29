@@ -16,10 +16,7 @@ export default {
                 return response.json(); // Converter a resposta em JSON
             })
             .then(data => {
-              this.capitulos = [];
-              for (let i = data.capitulos.length - 1; i >= 0; i--) {
-                  this.capitulos.push(data.capitulos[i]);
-              }
+              this.capitulos = data.capitulos.reverse();
               console.log(this.capitulos)              
             })
             .catch(error => console.error('Erro ao buscar os capítulos:', error));
