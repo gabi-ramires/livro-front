@@ -20,6 +20,7 @@ export default {
             })
             .then(data => {
                 console.log(data);
+                alert(data)
                 this.capitulos = data.capitulos; // Acesse o array de capítulos
             })
             .catch(error => alert('Erro ao buscar os capítulos:', error));
