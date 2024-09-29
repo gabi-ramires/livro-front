@@ -99,9 +99,8 @@ export default {
 
         this.capitulos = moka.capitulos;
         console.log(this.capitulos)
-      }
-    },
-    enviarComentario() {
+      },
+      enviarComentario() {
         // Verificar se o comentário não está vazio
         if (!this.comentario.mensagem) {
           alert('O campo de comentário é obrigatório.');
@@ -138,6 +137,7 @@ export default {
           alert('Ocorreu um erro. Por favor, tente novamente mais tarde.');
         });
       },
+    },
     mounted() {
       this.buscaCapitulos()
       //this.mokaa()
