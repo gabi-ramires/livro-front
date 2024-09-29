@@ -14,6 +14,7 @@ export default {
         fetch('https://livro.free.nf/capitulos.php')
             .then(response => {
                 if (!response.ok) {
+                  alert('deu ruim')
                     throw new Error('Network response was not ok');
                 }
                 return response.json(); // Converter a resposta em JSON
