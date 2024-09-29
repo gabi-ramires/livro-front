@@ -19,7 +19,7 @@
       <!-- card -->
       <div class='card' v-for="capitulo in capitulos" :key="capitulo.id">
         <router-link to="/capitulos">
-          <img :src="require(`@/assets/img/capas/capitulo${capitulo.capitulo}.jpg`)" :alt="capitulo.titulo">
+          <img :src="require(`@/assets/img/capas/capitulo${capitulo.capitulo}.jpg`)" loading="lazy" :alt="capitulo.titulo">
           <div class="overlay">
             <h5>Capítulo {{ capitulo.id }}</h5>
             <h4>{{ capitulo.titulo }}</h4>
