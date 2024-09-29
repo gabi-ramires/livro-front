@@ -14,17 +14,15 @@ export default {
         fetch('https://livro.free.nf/capitulos.php')
             .then(response => {
                 if (!response.ok) {
-                  alert('deu ruim')
-                    throw new Error('Network response was not ok');
+                  throw new Error('Network response was not ok');
                 }
                 return response.json(); // Converter a resposta em JSON
             })
             .then(data => {
                 console.log(data);
-                alert(data)
                 this.capitulos = data.capitulos; // Acesse o array de capítulos
             })
-            .catch(error => alert('Erro ao buscar os capítulos:', error));
+            .catch(error => console.error('Erro ao buscar os capítulos:', error));
       },
       selecionaCapitulo(capitulo) {
         this.capitulo_selecionado = capitulo;
