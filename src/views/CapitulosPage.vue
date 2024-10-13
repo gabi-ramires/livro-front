@@ -20,8 +20,17 @@
 
             <main class="content">
               <div class="form">
-                <h2>Comentários</h2>
+              <h2>Comentários</h2>
+              <div class='comentarios'>
+                  <div v-for="comentario in comentariosGET" :key="comentario.id">
+                    <div class="comentario" v-if="capitulo_selecionado == comentario.capitulo">
+                      <span class="nome">{{ comentario.nome }}</span>
+                      <p class="mensagem">{{ comentario.comentario }}</p>
+                    </div>
+                  </div>
+                </div>
                 
+                <hr>
                 <label>Nome (opcional):</label>
                 <input type="text" v-model="comentario.nome">
                 <label>Comentário:</label>
@@ -29,6 +38,7 @@
 
                 <button @click="enviarComentario()">Enviar</button>
               </div>
+
             </main>
 
             <footer class="footer">
@@ -51,7 +61,30 @@ export default {
         comentario: {
           nome: '',
           mensagem: ''
+        },
+        comentariosGET: [
+        {
+          "id": "3",
+          "nome": "laura ",
+          "comentario": "o capítulo ficou incrível, meu amor.\na história reflete a coragem de seguir nossos sonhos sem hesitar. \n\nps: estou orgulhosa de ti e te amo.\n\n",
+          "capitulo": "3",
+          "data": "2024-10-06 21:26:04.000000"
+        },
+        {
+          "id": "2",
+          "nome": "Alexandre ",
+          "comentario": "Muito bom ",
+          "capitulo": "2",
+          "data": "2024-09-29 21:03:52.000000"
+        },
+        {
+          "id": "1",
+          "nome": "Kelly Martins ",
+          "comentario": "Cada vez mais ansiosa pelos próximos capítulos.\n- talentosa demais! ",
+          "capitulo": "2",
+          "data": "2024-09-29 20:13:45.000000"
         }
+      ]
       };
     },
     methods: {
