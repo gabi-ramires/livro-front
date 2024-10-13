@@ -51,8 +51,7 @@ export default {
         comentario: {
           nome: '',
           mensagem: ''
-        },
-        comentariosGET: ''
+        }
       };
     },
     methods: {
