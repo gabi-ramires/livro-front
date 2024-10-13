@@ -163,6 +163,7 @@ export default {
     },
     mounted() {
       this.buscaCapitulos()
+      this.buscarComentarios();
       //this.mokaa()
     }
   }
