@@ -86,7 +86,7 @@
     flex-direction: column;
 }
 
-.form input, .form textarea {
+.form input{
     outline: none;
     border-radius: 8px;
     border: 1px solid #333;
@@ -149,6 +149,12 @@ button {
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
+  }
+
+  textarea {
+    outline: none;
+    border-radius: 8px;
+    padding: 10px;
   }
   
   button {
