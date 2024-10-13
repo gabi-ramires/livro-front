@@ -51,7 +51,8 @@ export default {
         comentario: {
           nome: '',
           mensagem: ''
-        }
+        },
+        comentariosGET: ''
       };
     },
     methods: {
@@ -135,6 +136,28 @@ export default {
         .catch(error => {
           console.error('Erro ao enviar o comentário:', error);
           alert('Ocorreu um erro. Por favor, tente novamente mais tarde.');
+        });
+      },
+      buscarComentarios() {
+
+        // Enviar os dados via POST
+        fetch('https://livro.free.nf/comentarios.php', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            this.comentariosGET = data.comentarios;
+            console.log(this.comentariosGET)
+          } else {
+            console.log("erro ao buscar comentarios")
+          }
+        })
+        .catch(error => {
+          console.error('Erro buscar comentários:', error);
         });
       },
     },
