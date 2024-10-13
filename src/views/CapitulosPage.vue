@@ -158,6 +158,7 @@ export default {
         .then(response => response.json())
         .then(data => {
           if (data.success) {
+            this.buscarComentarios();
             alert('Comentário enviado com sucesso!');
             this.comentario.nome = '';  // Limpar os campos
             this.comentario.mensagem = '';
@@ -194,9 +195,9 @@ export default {
       },
     },
     mounted() {
-      //this.buscaCapitulos()
-      //this.buscarComentarios();
-      this.mokaa()
+      this.buscaCapitulos()
+      this.buscarComentarios();
+      //this.mokaa()
     }
   }
   
